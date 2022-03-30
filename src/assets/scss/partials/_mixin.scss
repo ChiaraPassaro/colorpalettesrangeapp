@@ -1,0 +1,98 @@
+/*mixin*/
+@mixin title($f-size : 2.5em){
+  font-size: $f-size;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: $f-size * 1.1;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin animationRotation($name, $from, $to){
+
+  @keyframes #{$name} {
+    from {
+      transform: rotate($from);
+    }
+    to {
+      transform: rotate($to);
+    }
+  }
+
+  animation-name: $name;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  /*  l'animazione si ferma nella posizione 100%  */
+  animation-fill-mode: forwards;
+}
+
+@mixin animationFadeIn($name, $from, $to){
+
+  @keyframes #{$name} {
+    from {
+      opacity: $from;
+    }
+    to {
+      opacity: $to;
+    }
+  }
+
+  animation-name: $name;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@mixin animationFromTo($name, $from, $to, $direction : top){
+
+  @keyframes #{$name} {
+    from {
+      #{$direction} : $from;
+    }
+    to {
+      #{$direction} : $to;
+    }
+  }
+
+  animation-name: $name;
+  animation-duration: #{$animationDelayBase}s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+@mixin animationFadeInAndOut($name, $from, $to){
+
+  @keyframes #{$name} {
+    0% {
+      opacity: $from;
+    }
+    30% {
+      opacity: $to;
+    }
+    100% {
+      opacity: $from;
+    }
+  }
+
+  animation-name: $name;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}

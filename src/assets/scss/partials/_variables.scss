@@ -1,0 +1,79 @@
+/**********
+Debug
+**********/
+$debugColor: #ff1493;
+
+/**********
+Mediaquery Breakpoint
+**********/
+$mediaXL: 1200px;
+$mediaL: 900px;
+$mediaM: 768px;
+
+/**********
+Layout Base
+**********/
+$headerHeight: 70px;
+$headerContentHeight: 50px;
+$bodyColor: lightgrey;
+$containerColor: white;
+$mainColor: lightgrey;
+$headerColor: black;
+$footerColor: black;
+$paddingMacroXs: 20px;
+$colorAlert: #ff6200;
+$paddingContainer: 0.5rem;
+
+/**********
+Form
+**********/
+$inputBg: #C5C5C5;
+$inputBgFocus: transparentize(#ff6200, 0.5);
+$inputBorderColor: lightgrey;
+$inputBgSize: 1px;
+$inputColorLabel: #242424;
+$inputColorInput: black;
+$inputFontSize: 0.8rem;
+$submitSize: 1rem;
+$inputLH: 1.3em;
+$btnBorderRadius: 5px;
+
+/**********
+Palettes
+**********/
+$paletteFontSize: 1.5rem;
+$paletteFontSizeS: 1.3rem;
+$paletteFontColor: black;
+$palettePadding: 10;
+$palettePaddingM: $palettePadding*2; //px
+$palettePaddingL: $palettePadding*2; //px
+$palettePaddingXL: $palettePadding*4; //px
+$paletteFontWeight: bold;
+$colorWidth: 8%;
+$colorHeight: $colorWidth;
+
+/**********
+Animation
+**********/
+$animationDelayBase: 0.5;
+
+/**********
+Links
+**********/
+$colorLinkHover: white;
+
+/**********
+Fonts
+**********/
+$baseFont: 12px;
+$baseLineHeight: $baseFont * 1.5;
+$textShadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+$textShadowHover: 1px 1px 1px rgba(0, 0, 0, 0.5);
+$titlePalette: 2rem;
+
+/**********
+Colors
+**********/
+$grey: grey;
+$lightGrey: lighten($grey, 100);
+

@@ -1,0 +1,12 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 125">
+        <path
+                d="M62.5,0A62.5,62.5,0,1,0,125,62.5,62.5,62.5,0,0,0,62.5,0Zm0,85.38A22.88,22.88,0,1,1,85.38,62.5,22.88,22.88,0,0,1,62.5,85.38Z"/>
+    </svg>
+</template>
+
+<script>
+export default {
+    name: "WheelSvg",
+}
+</script>

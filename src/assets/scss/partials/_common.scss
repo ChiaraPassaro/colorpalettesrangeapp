@@ -1,0 +1,209 @@
+/*common*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Comfortaa', cursive;
+  background: $bodyColor;
+  font-size:  clamp( #{$baseFont}, 8vw, #{$baseFont} * 1.5);
+  width: 100%;
+  min-width: 1024px;
+  overflow: hidden;
+}
+
+/*Layout*/
+#app {
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+}
+
+.app__nav {
+  width: 100%;
+  height: $headerHeight;
+  @media screen and (max-width:$mediaL) {
+    height: $headerHeight - 20px;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $paddingContainer/2 $paddingContainer;
+
+  svg {
+    height: $headerContentHeight ;
+    @media screen and (max-width:$mediaL) {
+      height: $headerContentHeight / 2;
+    }
+    vertical-align: middle;
+  }
+  a {
+    height: $headerContentHeight ;
+    text-decoration: none;
+    color: inherit;
+    vertical-align: middle;
+    @media screen and (max-width:$mediaL) {
+      height: $headerContentHeight / 2;
+    }
+  }
+}
+
+.app__nav:not(.home) {
+  background-color: white;
+}
+
+.app__content {
+  width: 100%;
+  height: calc(100% - (#{$headerHeight} * 2));
+  &__header {
+    height: $headerHeight;
+    padding: 0 $paddingContainer;
+    background: linear-gradient(to left, #ffffff, rgb(211, 211, 211));
+    &__title {
+      font-size: $titlePalette;
+      line-height: $headerHeight;
+      text-transform: uppercase;
+      @media screen and (max-width:$mediaL) {
+        font-size: $titlePalette / 1.1;
+        line-height: $headerHeight / 1.1;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    height: 60px;
+    a {
+      aspect-ratio: 1/1;
+      margin-right: 10px;
+      height: 100%;
+    }
+    svg {
+      height: 100%;
+      &:hover {
+        fill: darken($mainColor, 50);
+      }
+    }
+    .router-link-exact-active svg {
+      fill: darken($mainColor, 20);
+    }
+  }
+}
+
+.main__navbar__description {
+  margin-top: 2em;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: $paddingContainer;
+  min-width: 1024px;
+  height: $headerHeight;
+  &:not(.home) {
+    background-color: white;
+  }
+  @media screen and (max-width:$mediaL) {
+    padding: $paddingContainer - 20;
+    height: $headerHeight - 20;
+  }
+  .footer__buttons {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    a {
+      height: $headerHeight / 2;
+    }
+  }
+}
+/*Form*/
+.btn {
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: $btnBorderRadius;
+  border: 2px solid;
+  background-color: white;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+      filter: brightness(85%);
+      outline: none;
+    }
+}
+
+.error {
+  color: $colorAlert;
+}
+
+.input-group{
+  position: relative;
+  padding: 5px;
+  border: $inputBgSize solid $inputBorderColor;
+  background: $inputBg;
+  text-align: left;
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  select{
+    width: 100%;
+    padding:0 3%;
+    border: 0;
+    background-color: transparent;
+
+    @media screen and (max-width:$mediaL) {
+      font-size: $inputFontSize / 1.1;
+      line-height: $inputLH / 1.1;
+    }
+    color: $inputColorLabel;
+    text-transform: capitalize;
+  }
+  label{
+    width: 70%;
+    margin-left: 3%;
+    font-size: $inputFontSize;
+    line-height: $inputLH;
+    @media screen and (max-width:$mediaL) {
+      font-size: $inputFontSize / 1.1;
+      line-height: $inputLH / 1.1;
+    }
+    text-align: left;
+    color: $inputColorLabel;
+  }
+  input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: 2px solid transparent;
+    text-align: right;
+    font-size: $inputFontSize;
+    line-height: $inputLH;
+    @media screen and (max-width:$mediaL) {
+      font-size: $inputFontSize / 1.1;
+      line-height: $inputLH / 1.1;
+    }
+    color: $inputColorInput;
+    &:focus{
+      outline: 0;
+      border: 2px solid $inputBgFocus;
+    }
+    &:focus ~ label{
+      color: darken($inputColorLabel, 40);
+    }
+  }
+
+}
