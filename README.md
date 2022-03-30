@@ -13,3 +13,19 @@ https://www.npmjs.com/package/@chiarapassaro/color-palettes-range
 ## Make Electron App 
 **Mac** `electron-forge make --platform=darwin`<br>
 **Windows** `electron-forge make --platform=win32`
+
+
+## "Making of" Articles (Italian)
+* [Creiamo una app con Vue ed Electron](https://chiarapassaro.medium.com/creiamo-una-app-con-vue-ed-electron-1-parte-147209265616)
+
+* [Creiamo una app con Vue ed Electron Parte 2](https://chiarapassaro.medium.com/creiamo-una-app-con-vue-ed-electron-parte-2-a12a0fc62df1)
+
+* [Creiamo una app con Vue ed Electron Parte 3](https://chiarapassaro.medium.com/creiamo-una-app-con-vue-ed-electron-parte-3-46aa10391e03)
+
+
+## Screens
+![Home](screens/mac-app-home.png)
+![Palettes](screens/mac-app-palettes.png)
+![Palette](screens/mac-app-palette.png)
+![Palette Colors](screens/mac-app-palette-colors.png)
+![Palette Wheel](screens/mac-app-palette-wheel.png)
