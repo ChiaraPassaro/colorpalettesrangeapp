@@ -8,15 +8,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "make-win": "electron-forge make --arch=x64 --platform=win32"
   },
   "dependencies": {
     "@chiarapassaro/color-palettes-range": "^1.1.13",
-    "@electron-forge/maker-zip": "^6.0.0-beta.61",
     "babel-plugin-prismjs": "^2.1.0",
     "chart.js": "^2.9.4",
     "core-js": "^3.14.0",
-    "electron-builder-squirrel-windows": "^22.14.3",
     "electron-squirrel-startup": "^1.0.0",
     "prettier": "^2.3.1",
     "prismjs": "^1.25.0",
@@ -28,7 +30,11 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-eslint": "^3.1.1",
     "@vue/cli-plugin-router": "^4.5.13",
@@ -36,7 +42,7 @@
     "@vue/cli-service": "^4.5.13",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "electron-nightly": "^17.0.0-nightly.20210930",
+    "electron-nightly": "^21.0.0-nightly.20220802",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^6.2.2",
@@ -50,23 +56,37 @@
         "icon": "./ico",
         "name": "Color Palettes Range"
       },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "config": {
+            "name": "ColorPalettesRange"
+          },
+          "platforms": [
+            "darwin",
+            "win32"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
       "make_targets": {
         "win32": [
           "squirrel"
         ]
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin",
-            "win32"
-          ],
-          "config": {
-            "name": "Color Palettes Range"
-          }
-        }
-      ]
+      }
     }
   }
 }
