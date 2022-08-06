@@ -178,8 +178,8 @@ export default {
       font-size: $titlePalette;
       line-height: $titlePalette;
       @media screen and (max-width: 1200px) {
-        font-size: $titlePalette / 1.3;
-        line-height: $titlePalette / 1.3;
+        font-size: math.div($titlePalette, 1.3);
+        line-height: math.div($titlePalette, 1.3);
       }
       text-transform: uppercase;
     }
@@ -207,7 +207,7 @@ export default {
       background-color: var(--bgSubmit);
       font-size: $submitSize;
       @media screen and (max-width: 1200px) {
-        font-size: $submitSize / 1.1;
+        font-size: math.div($submitSize, 1.1);
       }
       color: white;
       text-transform: uppercase;

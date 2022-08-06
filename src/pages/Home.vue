@@ -332,7 +332,7 @@ export default {
         background-color: var(--bgSubmit);
         font-size: $submitSize;
         @media screen and (max-width: 1200px) {
-          font-size: $submitSize / 1.1;
+          font-size: math.div($submitSize, 1.1);
         }
         color: white;
         text-transform: uppercase;
