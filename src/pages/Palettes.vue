@@ -51,15 +51,15 @@ export default {
     onWheel(event) {
       const vm = this;
       const container = vm.$refs.containerPalettes;
-      if (vm.timeout) {
-        window.cancelAnimationFrame(vm.timeout);
+      if (vm.requestAnimationFrameId) {
+        window.cancelAnimationFrame(vm.requestAnimationFrameId);
       }
       if (event.deltaY >= 0 && event.deltaX === 0) {
-        vm.timeout = window.requestAnimationFrame(function () {
+        vm.requestAnimationFrameId = window.requestAnimationFrame(function () {
           container.scrollLeft += 100;
         });
       } else if (event.deltaY < 0 && event.deltaX === 0) {
-        vm.timeout = window.requestAnimationFrame(function () {
+        vm.requestAnimationFrameId = window.requestAnimationFrame(function () {
           container.scrollLeft -= 100;
         });
       }

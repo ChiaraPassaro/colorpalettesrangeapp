@@ -77,10 +77,6 @@
 </template>
 
 <script>
-/** TODO add convert in hsl
- * on click open a modal with two input hex and rgb, and a submit.
- *
- **/
 import Home from "@/layouts/Home";
 import FormComponent from "@/components/FormComponent";
 import WheelComponent from "@/components/WheelComponent";

@@ -28,6 +28,7 @@ https://www.npmjs.com/package/@chiarapassaro/color-palettes-range
 
 * [Creiamo una app con Vue ed Electron Parte 6](https://chiarapassaro.medium.com/creiamo-una-app-con-vue-ed-electron-parte-6-7c9a19a71bea)
 
+* [Creiamo una app con Vue ed Electron Parte 7](https://chiarapassaro.medium.com/7-parte-creiamo-una-app-con-vue-ed-electron-f5577dbffcf6)
 
 ## Screens
 ![Home](screens/mac-app-home.png)
